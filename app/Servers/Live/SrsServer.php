@@ -42,15 +42,17 @@ class SrsServer
     }
 
     /**启动srs
+     * @param \swoole_process $process
      * @return bool
      */
-    public static function start($process){
+    public static function start(\swoole_process $process){
+
 //        ps -ef | grep srs | grep -v "grep" | awk '{print $2}'
         if(exec('ps -A | grep srs')){return true;}
         $srsConfPath=storage_path('/srs/conf/my.conf');
         if (file_put_contents($srsConfPath,self::loadSrsConf())) {
-            exec(storage_path('/srs/objs/srs').' -c '.$srsConfPath);
-//            $process->exec(storage_path('/srs/objs/srs'), [' -c '.$srsConfPath]);
+//            exec(storage_path('/srs/objs/srs').' -c '.$srsConfPath);
+            $process->exec(storage_path('/srs/objs/srs'), ["-c",$srsConfPath]);
         }
     }
 

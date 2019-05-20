@@ -1,3 +1,7 @@
+>基于[SRS](https://github.com/ossrs/srs) http_api模块开发的直播系统<br/>
+>利用ffmpeg对摄像头进行拉流(或RTMP推流),转码,切片(hls)<br/>
+>支持手机端,pc端,支持按需拉流(没人观看时,不拉取视频流,节约资源)
+
 ###1.安装
 
     composer install
