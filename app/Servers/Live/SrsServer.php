@@ -8,8 +8,9 @@
 namespace App\Servers\Live;
 
 use App\Lib\Util;
+use App\Servers\ServerAbstract;
 
-class SrsServer
+class SrsServer extends ServerAbstract
 {
     /**
      * 环境检测

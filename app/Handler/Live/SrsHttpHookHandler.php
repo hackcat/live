@@ -6,13 +6,15 @@
  * Time: 15:26
  */
 
-namespace App\Handler;
+namespace App\Handler\Live;
 
 
-class SrsHttpHookHandler
+use App\Handler\Handler;
+
+class SrsHttpHookHandler extends Handler
 {
-    /**
-     * 心跳
+    /**心跳
+     * @return int
      */
     public function heartbeat()
     {
@@ -20,7 +22,7 @@ class SrsHttpHookHandler
     }
 
     /**连接
-     * @param
+     * @return int
      */
     public function onConnect()
     {
