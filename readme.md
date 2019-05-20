@@ -1,7 +1,9 @@
 ###1.安装
+
     composer install
     #务必先安装服务
     php server.php install 
+    
 ###2.配置流列表
 ##### 2.1在storage/data/stream目录下新增 json 文件,文件名等于json里的stream项
 示例: storage/data/stream/4.json
@@ -15,6 +17,7 @@
     	"app": "live"//必须为live
     }
 ###3.命令
+
     //启动
     php server.php start 
     //后台运行
